@@ -132,6 +132,13 @@ export default class CodePatternCard extends React.Component {
                         alt="Java"
                       />            
                     ) : null}
+                    {language === 'Go' ?(
+                        <img
+                            src={`${process.env.PUBLIC_URL}/go.svg`}
+                            alt="Go"
+                        />
+                    ) : null}
+
                     {language === 'React' || language === "Angular" ?(
                       <img
                         src={`${process.env.PUBLIC_URL}/webui-32.png`}

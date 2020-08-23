@@ -363,23 +363,23 @@ render() {
               </div>
             </div>
           </Tab>
-          <Tab {...props.tab} label="Code Patterns">
+          <Tab {...props.tab} label="Starter Kits">
             <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
               <div className="bx--row landing-page__tab-content">
                 <div className="bx--col-lg-16">
 
                   <h2 className="landing-page__subheading">
-                    Code Patterns Git Repositories
+                    Starter Kit Git Repositories
                   </h2>
 
                   <div>
                     <p>
-                      Follow the commands below to install the Cloud Native Toolkit CLI tools. Login to the IBM Cloud account and configure your
+                      Follow the commands below to install the Cloud-Native Toolkit CLI tools. Login to the IBM Cloud account and configure your
                       command line for access to either {_.capitalize(clusterType)} Cluster.
                     </p>
                     <br></br>
                     <p>
-                      To use the Code Pattern Code Repositories, click on the link and generate a template into your own
+                      To use the Starter Kit Code Repositories, click on the link and generate a template into your own
                       git organization, Then follow instructions below.
                     </p>
 
@@ -392,7 +392,6 @@ render() {
 kubectl get pods
 npm install -g @ibmgaragecloud/cloud-native-toolkit-cli
 git clone <code pattern> | cd <code pattern>
-kubectl enable | git add . | git commit -m "Update"" | git push
 kubectl sync <namespace> --dev
 kubectl pipeline`}
                     </CodeSnippet>
@@ -403,7 +402,6 @@ kubectl pipeline`}
 oc get pods
 npm install -g @ibmgaragecloud/cloud-native-toolkit-cli
 git clone <code pattern> | cd <code pattern>
-oc enable | git add . | git commit -m "Update"" | git push
 oc sync <project> --dev
 oc pipeline 
 `}
@@ -411,7 +409,7 @@ oc pipeline
                   </div>
 
                   <p className="new-line">
-                    Use the following code patterns to create your own git repos. This will help you to accelerate the
+                    Use the following starter kits to create your own git repos. This will help you to accelerate the
                     start of your project
                     <br></br>
                   </p>
@@ -421,15 +419,29 @@ oc pipeline
                   </div>
 
                   <p className="new-line">
-                    The following code pattern templates can be used for demos and sample code
+                    The following starter kits templates can be used for demos and sample code, use the enable command to a helm chart to the base code
                     <br></br>
+
+                      <CodeSnippet type="multi" {...multilineProps}
+                                   style={{display: this.state.cluster.CLUSTER_TYPE === "kubernetes" ? "block" : "none"}}>
+                          {
+`kubectl enable | git add . | git commit -m "Update"" | git push
+kubectl pipeline`}
+                      </CodeSnippet>
+                      <CodeSnippet type="multi" {...multilineProps}
+                                   style={{display: this.state.cluster.CLUSTER_TYPE === "openshift" ? "block" : "none"}}>
+                          {
+`oc enable | git add . | git commit -m "Update"" | git push
+oc pipeline`}
+                      </CodeSnippet>
+
                   </p>
                   <br></br>
                   <div className="bx--row">
                     {getCodePatterns(links.ibmgit)}
                   </div>
                   <h2 className="landing-page__subheading">
-                    Other Templates
+                    Other Useful Repositories
                   </h2>
                   <br></br>
                   <p>
