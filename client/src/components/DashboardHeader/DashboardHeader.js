@@ -54,7 +54,7 @@ export default class DashboardHeader extends React.Component {
                 </HeaderMenuItem>
             </HeaderNavigation>
             <HeaderNavigation aria-label="Developer Guide">
-                <HeaderMenuItem href="https://ibm-garage-cloud.github.io/ibm-garage-developer-guide/" target="_blank">
+                <HeaderMenuItem href="https://cloudnativetoolkit.dev/" target="_blank">
                     Developer Guide
                 </HeaderMenuItem>
             </HeaderNavigation>
