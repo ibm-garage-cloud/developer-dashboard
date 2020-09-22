@@ -33,62 +33,27 @@ npm run api:test
 
 ### Release steps
 
-The following steps enable you to release a new version of the Dashboard into Docker hub so it can be installed using Terraform.
+#### Creating a release
 
-#### Step 1 
+This repository uses GitHub actions to automatically create a release whenever a change is pushed to `master`. The workflow for changes should follow a typical process:
 
-Release version of the code
-```
-npm run release
-```
+1. Create a branch (ideally in a fork of the repository)
 
-**Note:** In order to create a Release on GitHub, you must first set the GITHUB_TOKEN with the personal access token, e.g.
+2. Create a pull-request to merge the changes from the branch into `master`. Add a release label (`major`, `minor`, `patch`) and a change type label (`feature`, `bug`, `chore`) to the pull request to effect the new release tag that is generated and how the change log is generated for the release.
 
-```
-export GITHUB_TOKEN={personal access token}
-```
+3. Merge the pull-request into master. This will trigger the workflow to create the release.
 
-#### Step 2
+#### Building the container image
 
-Go to [Garage Terraform modules](https://github.com/ibm-garage-cloud/garage-terraform-modules)
+This repository is also connected to the Docker Hub build image. The build process has been configured with two rules:
 
-Edit this file
+1. Any time a change is pushed to `master`, a new image is built with the `latest` tag
+2. Any time a new release is created for the repository, a new image is built with a tag that matches the repository tag (e.g. git tag v1.1.1 -> docker tag 1.1.1)
 
-```
-https://github.com/ibm-garage-cloud/garage-terraform-modules/blob/master/tools/catalystdashboard_release/variables.tf
-```
+#### Updating the Dashboard terraform module
 
-Change the default value to the current tagged version that is being built
+The `terraform-tools-dashboard` module deploys the built image to the cluster. The terraform module uses the `developer-dashboard` chart in the [Toolkit charts](https://github.com/ibm-garage-cloud/toolkit-charts)
+repository to deploy the image.
 
-```json
-variable "image_tag" {
-  description = "The image version tag to use"
-  default     = "1.0.x"
-}
-```
-
-Tag the versions of the Terraform Modules
-
-```bash
-git add .
-git commit -m "Update version"
-git push
-git tag v1.0.x
-git push --tags
-```
-
-#### Step 3
-
-Go to Iteration zero to update the versions of the modules
-
-```json
-https://github.com/ibm-garage-cloud/ibm-garage-iteration-zero
-```
-
-Edit and increment the version of the module to the Terraform modules tagged version 
-```
-https://github.com/ibm-garage-cloud/ibm-garage-iteration-zero/blob/master/terraform/stages/stage2-catalystdashboard.tf```
-
-
-
-
+Each version of the module refers to a particular version of the image. As part of the release process, a GitHub Action will trigger a notification
+to the terraform module that a new version is available. This will trigger a process in the terraform module to get the latest version number and create a PR containing the change.
