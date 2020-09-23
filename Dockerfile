@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/nodejs-10
+FROM registry.access.redhat.com/ubi8/nodejs-12:1-59
 RUN echo ${HOME}
 RUN whoami
 RUN pwd
