@@ -10,7 +10,6 @@ module.exports = function (app) {
 
             function respondUrls(res,env) {
                 var urls = {
-                    gitlab: "https://" + (env.REGION || 'us-south') + ".git.cloud.ibm.com",
                     jenkins: env.JENKINS_URL,
                     pipeline: env.PIPELINE_URL,
                     argocd: env.ARGOCD_URL,
@@ -21,7 +20,6 @@ module.exports = function (app) {
                     ta: env.TA_URL,
                     apieditor: env.APIEDITOR_URL,
                     codeready:env.CODEREADY_URL,
-                    github:env.GITHUB_URL,
                     integration:env.INTEGRATION_URL,
                     mcm: env.MCM_URL,
                     data: env.DATA_URL,
@@ -33,6 +31,13 @@ module.exports = function (app) {
                     ir: env.IR_URL,
                     jaeger: env.JAEGER_URL,
                 };
+
+                if (env.SOURCECONTROL_TYPE == 'github') {
+                    urls.github = env.SOURCECONTROL_URL;
+                } else if (env.SOURCECONTROL_TYPE == 'gitlab') {
+                    urls.gitlab = env.SOURCECONTROL_URL;
+                }
+
                 return res.json(urls);
             }
 

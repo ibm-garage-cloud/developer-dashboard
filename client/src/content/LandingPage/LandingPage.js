@@ -304,7 +304,7 @@ render() {
               </div>
             </div>
           </Tab>
-          <Tab {...props.tab} label="Activation">
+          <Tab {...props.tab} label="Learn">
             <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
               <div className="bx--row landing-page__tab-content">
                 <div className="bx--col-lg-16">
