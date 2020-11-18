@@ -86,11 +86,8 @@ export default class CodePatternCard extends React.Component {
       className,
     } = this.props;
 
-    let isLink;
-    if (href !== undefined) {
-      isLink = href.charAt(0) === '/';
-    }
-    let hrefGen = href+"/generate";
+    const isLink = href && href.charAt(0) === '/';
+    const hrefGen = href && href.contains('github.com') ? href + "/generate" : href;
 
     const StarterKitCardClassNames = classnames([`${prefix}--article-card`], {
       [className]: className,
