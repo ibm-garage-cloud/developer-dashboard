@@ -1,4 +1,4 @@
-# IBM Garage Cloud Native Toolkit 
+# IBM Garage Cloud Native Toolkit
 ## Developer Dashboard
 
 A simple dashboard that enables navigation to the tools that have been installed
@@ -16,10 +16,10 @@ npm run build
 npm run start
 ```
 
-Build and develop with the client code it will open on port `3001`
+Build and develop with the client code it will open on port `3000`
 ```bash
 cd client
-npm run dev 
+npm run dev
 
 ```
 
