@@ -87,7 +87,7 @@ export default class CodePatternCard extends React.Component {
     } = this.props;
 
     const isLink = href && href.charAt(0) === '/';
-    const hrefGen = href && href.contains('github.com') ? href + "/generate" : href;
+    const hrefGen = href && href.indexOf('github.com') > -1 ? href + "/generate" : href;
 
     const StarterKitCardClassNames = classnames([`${prefix}--article-card`], {
       [className]: className,
@@ -108,7 +108,7 @@ export default class CodePatternCard extends React.Component {
     const cardContent = (
       <>
         <div className={`${prefix}--article-card__img`}>{children}</div>
-        <div className={aspectRatioClassNames}>        
+        <div className={aspectRatioClassNames}>
 
           <div
             className={`${prefix}--aspect-ratio--object ${prefix}--starterkit-card__tile`}
@@ -121,13 +121,13 @@ export default class CodePatternCard extends React.Component {
                       <img
                         src={`${process.env.PUBLIC_URL}/node-32.png`}
                         alt="Node"
-                      />            
+                      />
                     ) : null}
                     {language === 'Java' || language === 'Spring' || language === 'Liberty' ?(
                       <img
                         src={`${process.env.PUBLIC_URL}/java-32.png`}
                         alt="Java"
-                      />            
+                      />
                     ) : null}
                     {language === 'Go' ?(
                         <img
@@ -140,11 +140,11 @@ export default class CodePatternCard extends React.Component {
                       <img
                         src={`${process.env.PUBLIC_URL}/webui-32.png`}
                         alt="Java"
-                      />            
+                      />
                     ) : null}
-                  </div>    
-                  {title}  
-                  
+                  </div>
+                  {title}
+
               </h4>
             ) : null}
 
@@ -171,9 +171,9 @@ export default class CodePatternCard extends React.Component {
             </div>
 
             <div className="icon-row">
-             
+
               <div className={`${prefix}--article-card__icon--action`}>
-              
+
                 {actionIcon === 'launch' && !disabled ? (
                   <Launch20 aria-label="Open" />
                 ) : null}
@@ -196,13 +196,13 @@ export default class CodePatternCard extends React.Component {
                       target="_blank"
                       rel="noopener noreferrer"
                       href={href}
-                    >  
+                    >
                     <div>
                       <img
                         src={`${process.env.PUBLIC_URL}/github-icon.png`}
                         alt="Github"
-                      />                              
-                    </div>      
+                      />
+                    </div>
                     </a>
               </div>
             </div>
