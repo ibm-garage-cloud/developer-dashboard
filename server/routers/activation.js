@@ -10,7 +10,7 @@ module.exports = function (app) {
     if (fileJSONLINKS) {
       return res.json(JSON.parse(fileJSONLINKS))
     }
-    const activation = process.env.LINKS_URL || 'https://raw.githubusercontent.com/ibm-garage-cloud/developer-dashboard/master/public/data/links.json'
+    const activation = process.env.LINKS_URL || 'https://raw.githubusercontent.com/ibm-garage-cloud/developer-dashboard/main/public/data/links.json'
 
     // Get the Activation links
     rp({

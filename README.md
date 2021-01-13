@@ -35,19 +35,19 @@ npm run api:test
 
 #### Creating a release
 
-This repository uses GitHub actions to automatically create a release whenever a change is pushed to `master`. The workflow for changes should follow a typical process:
+This repository uses GitHub actions to automatically create a release whenever a change is pushed to `main`. The workflow for changes should follow a typical process:
 
 1. Create a branch (ideally in a fork of the repository)
 
-2. Create a pull-request to merge the changes from the branch into `master`. Add a release label (`major`, `minor`, `patch`) and a change type label (`feature`, `bug`, `chore`) to the pull request to effect the new release tag that is generated and how the change log is generated for the release.
+2. Create a pull-request to merge the changes from the branch into `main`. Add a release label (`major`, `minor`, `patch`) and a change type label (`feature`, `bug`, `chore`) to the pull request to effect the new release tag that is generated and how the change log is generated for the release.
 
-3. Merge the pull-request into master. This will trigger the workflow to create the release.
+3. Merge the pull-request into `main`. This will trigger the workflow to create the release.
 
 #### Building the container image
 
 This repository is also connected to the Docker Hub build image. The build process has been configured with two rules:
 
-1. Any time a change is pushed to `master`, a new image is built with the `latest` tag
+1. Any time a change is pushed to `main`, a new image is built with the `latest` tag
 2. Any time a new release is created for the repository, a new image is built with a tag that matches the repository tag (e.g. git tag v1.1.1 -> docker tag 1.1.1)
 
 #### Updating the Dashboard terraform module
