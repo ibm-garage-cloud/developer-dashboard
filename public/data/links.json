@@ -70,6 +70,7 @@
     {"title":"Inventory Service", "subtitle":"Inventory Service sample with Cloudant integration","language":"Java","href":"https://github.com/ibm-garage-cloud/inventory-management-svc-solution","color":"light"},
     {"title":"Inventory BFF", "subtitle":"Inventory Back end for Frontend integrates with Inventory Service","language":"TypeScript","href":"https://github.com/ibm-garage-cloud/inventory-management-bff-solution","color":"light"},
     {"title":"Inventory UI", "subtitle":"Inventory User Interface built with Carbon integrates with Inventory BFF","language":"React","href":"https://github.com/ibm-garage-cloud/inventory-management-ui-solution","color":"light"},
+    {"title":"Liberty AppMod", "subtitle":"Sample Liberty AppMod application generated from TA","language":"Liberty","href":"https://github.com/ibm-cloud-architecture/appmod-liberty-toolkit","color":"light"},
     {"title":"Node Express App", "subtitle":"pre-configured as a microservice with Express.js","language":"Express","href":"https://github.com/IBM/nodejs-express-app","color":"light"},
     {"title":"Java Spring App", "subtitle":"pre-configured as a microservice with Spring","language":"Spring","href":"https://github.com/IBM/java-spring-app","color":"light"},
     {"title":"Java Liberty App", "subtitle":"pre-configured as a microservice with Liberty","language":"Liberty","href":"https://github.com/IBM/java-liberty-app","color":"light"}
