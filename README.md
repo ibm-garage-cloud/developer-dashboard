@@ -5,6 +5,10 @@ A simple dashboard that enables navigation to the tools that have been installed
  using the `iteration-zero` Terraform asset or configured with `igc tool
  -config` command line.
 
+## Customizing Cards
+
+To add, change or delete cards on the developer dashboard edit the `/public/data/links.json` file and update the information in the appropriate section.  
+
 ## Build
 
 To build the project use the following commands.
@@ -16,12 +20,14 @@ npm run build
 npm run start
 ```
 
-Build and develop with the client code it will open on port `3000`
+Build and develop with the client code it will open on port `3001`
 ```bash
 cd client
 npm run dev
 
 ```
+
+When running locally you can override default settings by putting environment variables in `.env.local` and `/client/.env.local` files.
 
 ### Testing API
 

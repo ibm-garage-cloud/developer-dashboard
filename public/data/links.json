@@ -57,6 +57,7 @@
   {"title":"Typescript GraphQL", "subtitle":"Node.js TypeScript GraphQL Backend for Frontend","language":"TypeScript","href":"https://github.com/IBM/template-graphql-typescript","color":"light"},
   {"title":"Typescript Microservice", "subtitle":"Node.js TypeScript Microservice offering OpenAPI endpoints","language":"TypeScript","href":"https://github.com/IBM/template-node-typescript","color":"light"},
   {"title":"Spring Boot Microservice", "subtitle":"Spring Boot Java Microservice","language":"Java","href":"https://github.com/IBM/template-java-spring","color":"light"},
+  {"title":"Quarkus Microservice", "subtitle":"Quarkus Java Microservice","language":"Java","href":"https://github.com/ibm-garage-cloud/template-quarkus","color":"light"},
   {"title":"Go Gin Microservice", "subtitle":"Go Gin Microservice/Edge","language":"Go","href":"https://github.com/IBM/template-go-gin","color":"light"}
   ],
   "argocd" : [

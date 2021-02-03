@@ -13,6 +13,8 @@ const localConfig = require("./config/local.json");
 const path = require("path");
 var cookieParser = require("cookie-parser");
 
+require('dotenv').config({ path: '.env.local'});
+
 const logger = log4js.getLogger(appName);
 const app = express();
 
