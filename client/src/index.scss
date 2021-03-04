@@ -94,6 +94,22 @@ main {
     margin-right: 30px;
 }
 
+.toolkit-logo-custom {
+  left: auto;
+  width: 300px;
+  /* display: flex; */
+  /* justify-content: flex-end; */
+  /* align-items: flex-start; */
+  height: 35px;
+  /* align-content: flex-end; */
+  /* display: inline-block; */
+  position: absolute;
+  right: 0;
+  /* vertical-align: middle; */
+  z-index: -999;
+  margin-right: 30px;
+}
+
 /// Padding was introduced in 10.3.0, needs an option to let grid set the viewport gutter
 /// @link https://github.com/carbon-design-system/carbon/issues/3010
 .bx--content {
