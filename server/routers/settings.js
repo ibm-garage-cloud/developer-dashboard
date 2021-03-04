@@ -10,6 +10,7 @@ module.exports = function (app) {
         _settings.DASHBOARD_TITLE = process.env.DASHBOARD_TITLE || settings.DASHBOARD_TITLE;
         _settings.CLOUD_TITLE = process.env.CLOUD_TITLE || settings.CLOUD_TITLE;
         _settings.CLOUD_URL = process.env.CLOUD_URL || settings.CLOUD_URL;
+        _settings.DASHBOARD_IMAGE = process.env.DASHBOARD_IMAGE || settings.DASHBOARD_IMAGE;
         res.json(_settings);
     });
 

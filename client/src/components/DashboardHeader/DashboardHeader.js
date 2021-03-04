@@ -34,19 +34,30 @@ export default class DashboardHeader extends React.Component {
             });
     }
 
+    getDashboardImageHtml(dashboardImage, dashboardTitle) {
+        if (dashboardImage) {
+            return (<img style={{padding: "5px 0"}} height="50px" src={dashboardImage} alt={dashboardTitle} />)
+        }
+
+        return dashboardTitle;
+    }
+
     render() {
 
-        var dashboardPrefix = this.state.settings.DASHBOARD_PREFIX;
-        var dashboardTitle = this.state.settings.DASHBOARD_TITLE;
-        var cloudTitle = this.state.settings.CLOUD_TITLE;
-        var cloudUrl = this.state.settings.CLOUD_URL;
+        const dashboardPrefix = this.state.settings.DASHBOARD_PREFIX;
+        const dashboardTitle = this.state.settings.DASHBOARD_TITLE;
+        const cloudTitle = this.state.settings.CLOUD_TITLE;
+        const cloudUrl = this.state.settings.CLOUD_URL;
+        const dashboardImage = this.state.settings.DASHBOARD_IMAGE;
+
+        const headerContent = this.getDashboardImageHtml(dashboardImage, dashboardTitle)
 
         return (
 
         <Header aria-label="Tools View">
             <SkipToContent />
             <HeaderName element={Link} to="/" prefix={dashboardPrefix}>
-                {dashboardTitle}
+                {headerContent}
             </HeaderName>
             <HeaderNavigation aria-label="Repositories">
                 <HeaderMenuItem href={cloudUrl} target="_blank">
