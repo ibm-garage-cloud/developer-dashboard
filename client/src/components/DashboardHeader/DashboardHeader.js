@@ -42,6 +42,25 @@ export default class DashboardHeader extends React.Component {
         return dashboardTitle;
     }
 
+    getToolkitLogo(toolkitLogo) {
+        if (toolkitLogo) {
+            return (
+                <div className = "toolkit-logo-custom" >
+                    <img className = "landing-page__illo" src={toolkitLogo} alt = "illustration"/>
+                </div>
+            );
+        }
+
+        const imageUrl = `${process.env.PUBLIC_URL}/dashboard.svg`;
+
+        return (
+            <div className = "toolkit-logo" >
+                <img className = "landing-page__illo" src={imageUrl} alt = "illustration"/>
+            </div>
+        );
+
+    }
+
     render() {
 
         const dashboardPrefix = this.state.settings.DASHBOARD_PREFIX;
@@ -50,7 +69,8 @@ export default class DashboardHeader extends React.Component {
         const cloudUrl = this.state.settings.CLOUD_URL;
         const dashboardImage = this.state.settings.DASHBOARD_IMAGE;
 
-        const headerContent = this.getDashboardImageHtml(dashboardImage, dashboardTitle)
+        const headerContent = this.getDashboardImageHtml(dashboardImage, dashboardTitle);
+        const toolkitLogo = this.getToolkitLogo(this.state.settings.TOOLKIT_LOGO);
 
         return (
 
@@ -75,10 +95,7 @@ export default class DashboardHeader extends React.Component {
                     Git Org
                 </HeaderMenuItem>
             </HeaderNavigation>
-            <div className = "toolkit-logo" >
-                <img className = "landing-page__illo" src={`${process.env.PUBLIC_URL}/dashboard.svg`}
-                     alt = "illustration"/>
-            </div>
+            {toolkitLogo}
         </Header>
 
         )
