@@ -250,7 +250,7 @@ render() {
 
          <div class="clusterInfo">
             <AccordionItem
-            title="Developer Dashboard" >
+            title={this.state.cluster.DASHBOARD_HEADING || 'Developer Dashboard'} >
                 <div>
                     <ul style={{"padding": "5px 10px"}}>
                     <li style={{"padding": "5px 0"}}><strong>CLUSTER_TYPE:</strong> {_.capitalize(this.state.cluster.CLUSTER_TYPE)}
