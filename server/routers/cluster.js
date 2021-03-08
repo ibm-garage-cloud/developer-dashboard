@@ -25,11 +25,14 @@ module.exports = function (app) {
                         return {};
                     })
                     .then(data => {
+                        return Object.assign(data, {DASHBOARD_HEADING: process.env.DASHBOARD_HEADING || data.DASHBOARD_HEADING || 'Developer Dashboard' })
+                    })
+                    .then(data => {
                         res.json(data);
                     });
             } catch (err) {
                 console.error('Error getting kubernetes client: ', err);
-                res.json({});
+                res.json({DASHBOARD_HEADING: process.env.DASHBOARD_HEADING || 'Developer Dashboard' });
             }
         }
 
