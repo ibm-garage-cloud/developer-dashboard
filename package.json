@@ -48,7 +48,7 @@
     }
   },
   "dependencies": {
-    "@carbon/colors": "^10.7.2",
+    "@carbon/colors": "^10.18.0",
     "@carbon/grid": "^10.8.3",
     "body-parser": "^1.17.2",
     "carbon-icons": "^7.0.7",
