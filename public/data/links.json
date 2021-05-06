@@ -59,6 +59,7 @@
   {"title":"Spring Boot Microservice", "subtitle":"Spring Boot Java Microservice","language":"Java","href":"https://github.com/IBM/template-java-spring","color":"light"},
   {"title":"Quarkus Microservice", "subtitle":"Quarkus Java Microservice","language":"Java","href":"https://github.com/IBM/template-quarkus","color":"light"},
   {"title":"Liberty Microservice", "subtitle":"Open Liberty Java Microservice","language":"Java","href":"https://github.com/IBM/template-liberty","color":"light"},
+  {"title":"Artificial Intelligence (AI) Microservice", "subtitle":"Deep Learning Model: Locate and identify multiple objects in a single image.","language":"Python","href":"https://github.com/IBM/MAX-Object-Detector","color":"light"},
   {"title":"Go Gin Microservice", "subtitle":"Go Gin Microservice/Edge","language":"Go","href":"https://github.com/IBM/template-go-gin","color":"light"}
   ],
   "argocd" : [
