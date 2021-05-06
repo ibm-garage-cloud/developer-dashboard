@@ -12,7 +12,7 @@ jobs:
       - name: Publish repository dispatch
         uses: ibm-garage-cloud/action-repository-dispatch@main
         with:
-          notifyRepo: ibm-garage-cloud/ibm-garage-iteration-zero
+          notifyRepo: cloud-native-toolkit/terraform-tools-dashboard
           eventType: released
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
